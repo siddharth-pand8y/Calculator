@@ -111,7 +111,6 @@ header {
   width: 80%;
   font-family: 'Digital-7';
   font-size: 29px;
-
 }
 .operand > button {
   width: fit-content;
@@ -126,4 +125,37 @@ header {
   margin: 0 0 0 25px;
   font-family: 'Digital-7';
   font-size: 29px;
+}
+
+#buttonPad {
+  height: 70%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 20px 0;
+}
+
+#clearButton {
+  grid-row: 1/3;
+  grid-column: 1/1;
+}
+
+#equalButton {
+  grid-row: 6/7;
+  grid-column: 4/5;
+}
+
+#numberPad {
+  grid-row: 3/7;
+  grid-column: 1/4;
+}
+
+#operandRow {
+  grid-row: 1/3;
+  grid-column: 2/5;
+}
+
+#operandColumn {
+  grid-row: 1/6;
+  grid-column: 4/5;
 }
