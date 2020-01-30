@@ -71,8 +71,8 @@
       <section id="CalculatorSection">
         <div class="screen">
           <div class="operand">
-            <input />
-            <button>
+            <input id="screenDisplayInput" />
+            <button type="button" onclick="Delete()">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -149,16 +149,16 @@
           <output id="output"> </output>
         </div>
         <div id="buttonPad">
-          <button id="clearButton">C</button>
+          <button id="clearButton" onclick="reset()">C</button>
           <div id="operandRow">
-            <button>()</button>
-            <button>%</button>
-            <button>/</button>
+            <button onclick="screenDisplayOptions(false, '()')">()</button>
+            <button onclick="screenDisplayOptions(false, '%')">%</button>
+            <button onclick="screenDisplayOptions(false, '/')">/</button>
           </div>
           <div id="operandColumn">
-            <button>X</button>
-            <button>+</button>
-            <button>-</button>
+            <button onclick="screenDisplayOptions(false, '*')">X</button>
+            <button onclick="screenDisplayOptions(false, '+')">+</button>
+            <button onclick="screenDisplayOptions(false, '-')">-</button>
           </div>
           <button id="equalButton">=</button>
           <div id="numberPad">
@@ -177,9 +177,7 @@
             <button onclick="screenDisplayOptions(true, 0)">0</button>
             <button onclick="screenDisplayOptions(false, '.')">.</button>
           </div>
-          <div id="backgroundHighlight">
-            
-          </div>
+          <div id="backgroundHighlight"></div>
         </div>
       </section>
     </main>

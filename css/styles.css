@@ -106,7 +106,6 @@ header {
 }
 .operand {
   border-bottom: 2px solid #effaff;
-  /* box-shadow: 0 3px 6px #00000017; */
   margin-left: 25px;
   display: flex;
   flex-direction: row;
@@ -121,6 +120,7 @@ header {
   width: 80%;
   font-family: 'Digital-7';
   font-size: 29px;
+  text-align: right;
 }
 .operand > button {
   width: fit-content;
