@@ -151,29 +151,29 @@
         <div id="buttonPad">
           <button id="clearButton" onclick="reset()">C</button>
           <div id="operandRow">
-            <button onclick="screenDisplayOptions(false, '()')">()</button>
-            <button onclick="screenDisplayOptions(false, '%')">%</button>
-            <button onclick="screenDisplayOptions(false, '/')">/</button>
+            <button onclick="handleCalculatorButtonPress(false, '&#8730;')">&Sqrt;</button>
+            <button onclick="handleCalculatorButtonPress(false, '%')">%</button>
+            <button onclick="handleCalculatorButtonPress(false, '/')">/</button>
           </div>
           <div id="operandColumn">
-            <button onclick="screenDisplayOptions(false, '*')">X</button>
-            <button onclick="screenDisplayOptions(false, '+')">+</button>
-            <button onclick="screenDisplayOptions(false, '-')">-</button>
+            <button onclick="handleCalculatorButtonPress(false, '*')">X</button>
+            <button onclick="handleCalculatorButtonPress(false, '+')">+</button>
+            <button onclick="handleCalculatorButtonPress(false, '-')">-</button>
           </div>
           <button id="equalButton" onclick="calculate()">=</button>
           <div id="numberPad">
-            <button onclick="screenDisplayOptions(true, 1)">1</button>
-            <button onclick="screenDisplayOptions(true, 2)">2</button>
-            <button onclick="screenDisplayOptions(true, 3)">3</button>
-            <button onclick="screenDisplayOptions(true, 4)">4</button>
-            <button onclick="screenDisplayOptions(true, 5)">5</button>
-            <button onclick="screenDisplayOptions(true, 6)">6</button>
-            <button onclick="screenDisplayOptions(true, 7)">7</button>
-            <button onclick="screenDisplayOptions(true, 8)">8</button>
-            <button onclick="screenDisplayOptions(true, 9)">9</button>
-            <button onclick="screenDisplayOptions(false, '+/-')">+/-</button>
-            <button onclick="screenDisplayOptions(true, 0)">0</button>
-            <button onclick="screenDisplayOptions(false, '.')">.</button>
+            <button onclick="handleCalculatorButtonPress(true, 1)">1</button>
+            <button onclick="handleCalculatorButtonPress(true, 2)">2</button>
+            <button onclick="handleCalculatorButtonPress(true, 3)">3</button>
+            <button onclick="handleCalculatorButtonPress(true, 4)">4</button>
+            <button onclick="handleCalculatorButtonPress(true, 5)">5</button>
+            <button onclick="handleCalculatorButtonPress(true, 6)">6</button>
+            <button onclick="handleCalculatorButtonPress(true, 7)">7</button>
+            <button onclick="handleCalculatorButtonPress(true, 8)">8</button>
+            <button onclick="handleCalculatorButtonPress(true, 9)">9</button>
+            <button onclick="handleCalculatorButtonPress(false, '+/-')">+/-</button>
+            <button onclick="handleCalculatorButtonPress(true, 0)">0</button>
+            <button onclick="handleCalculatorButtonPress(false, '.')">.</button>
           </div>
           <div id="backgroundHighlight"></div>
         </div>
