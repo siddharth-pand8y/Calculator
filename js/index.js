@@ -13,51 +13,58 @@ function tabSelect(calculatorSelected) {
 var output = 0;
 previousInputisOperator = false;
 var calculationInput = '';
+var openBracket = 0;
 
-function handleCalculatorButtonPress(isOperand, value) {
+function handleNumpadPress(value) {
   this.calculationInput = document.getElementById('screenDisplayInput').value;
-  // * Condition: If input is a number
-  if (isOperand === true) {
-    this.previousInputisOperator = false;
-    this.calculationInput += value;
-    console.log('Operand', this.calculationInput);
-    document.getElementById('screenDisplayInput').value = this.calculationInput;
-  }
-  // * Condition: Else input is a operation on number
-  else {
-    if (this.calculationInput.length === 0) {
-      console.warn('Operator entered before operand');
-    } else {
-      if (this.previousInputisOperator === true) {
-        switch (value) {
-          case '/':
-          case '*':
-          case '+':
-          case '-':
-            this.calculationInput = this.calculationInput.slice(0, -1) + value;
-            break;
-          case '+/-':
-            this.calculationInput += '-';
-            break;
-          case '√':
-            this.calculationInput += '√';
-            break;
-          default:
-            console.warn('Switch Default', value);
-            break;
-        }
+  this.previousInputisOperator = false;
+  this.calculationInput += value;
+  console.log('Operand', this.calculationInput);
+  document.getElementById('screenDisplayInput').value = this.calculationInput;
+}
 
-        console.log('Operator #1', this.calculationInput);
-      } else {
-        this.calculationInput += value;
-        console.log('Operator #2', this.calculationInput);
+function handleOperatorPress(value) {
+  if (this.calculationInput.length === 0) {
+    console.warn('Operator entered before operand');
+  } else {
+    if (this.previousInputisOperator === true) {
+      switch (value) {
+        case '/':
+        case '*':
+        case '+':
+        case '-':
+        case '%':
+          this.calculationInput = this.calculationInput.slice(0, -1) + value;
+          break;
+        default:
+          console.warn('Switch Default', value);
+          break;
       }
-      this.previousInputisOperator = true;
-      document.getElementById(
-        'screenDisplayInput'
-      ).value = this.calculationInput;
+      console.log('Operator #1', this.calculationInput);
+    } else {
+      this.calculationInput += value;
+      console.log('Operator #2', value);
     }
+    this.previousInputisOperator = true;
   }
+  document.getElementById('screenDisplayInput').value = this.calculationInput;
+}
+
+function brackets() {
+  if (this.openBracket < 1) {
+    this.calculationInput += '(';
+    this.openBracket++;
+  } else {
+    this.calculationInput += ')';
+    this.openBracket--;
+  }
+  document.getElementById('screenDisplayInput').value = this.calculationInput;
+}
+
+function makeValueNegative() {
+  this.calculationInput += '(-';
+  this.openBracket++;
+  document.getElementById('screenDisplayInput').value = this.calculationInput;
 }
 
 function reset() {
@@ -67,16 +74,16 @@ function reset() {
 }
 
 function Delete() {
-  document.getElementById('screenDisplayInput').value = document
-    .getElementById('screenDisplayInput')
-    .value.substring(
-      0,
-      document.getElementById('screenDisplayInput').value.length - 1
-    );
+  this.calculationInput = this.calculationInput.substring(
+    0,
+    this.calculationInput.length - 1
+  );
+  document.getElementById('screenDisplayInput').value = this.calculationInput;
+
 }
 
 function calculate() {
-    this.output = eval(document.getElementById('screenDisplayInput').value);
-    console.log('Output', this.output);
-    document.getElementById('output').innerHTML = this.output;
+  this.output = eval(document.getElementById('screenDisplayInput').value);
+  console.log('Output', this.output);
+  document.getElementById('output').innerHTML = this.output;
 }
