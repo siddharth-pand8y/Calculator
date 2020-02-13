@@ -3,6 +3,8 @@ function tabSelect(calculatorSelected) {
     document.getElementById('calculatorButton').className = 'selectedAction';
     document.getElementById('converterButton').removeAttribute('class');
     document.getElementById('selectedTab').style.transform = 'translate(0, 0)';
+    document.getElementById('selectedTab').style.boxShadow =
+    '4px 0 4px #00000017';
     document.getElementById('CalculatorSection').style.transform =
       'translate(0, 0)';
     document.getElementById('ConvertorSection').style.transform =
@@ -12,6 +14,8 @@ function tabSelect(calculatorSelected) {
     document.getElementById('calculatorButton').removeAttribute('class');
     document.getElementById('selectedTab').style.transform =
       'translate(100%, 0)';
+    document.getElementById('selectedTab').style.boxShadow =
+      '-4px 0 4px #00000017';
     document.getElementById('ConvertorSection').style.transform =
       'translate(-100vw, 0)';
     document.getElementById('CalculatorSection').style.transform =

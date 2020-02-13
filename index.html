@@ -7,6 +7,8 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.typekit.net/yva6ihk.css" />
     <link rel="stylesheet" href="https://use.typekit.net/mkg2zkh.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <main>
@@ -148,9 +150,28 @@
               <img src="./assets/delete.svg" alt="" />
             </button>
           </div>
+          <div id="converterButtonPad">
+            <button id="clearButton" onclick="reset()">C</button>
+            <button id="equalButton" onclick="calculate()">=</button>
+            <div id="numberPad">
+              <button onclick="handleNumpadPress(1)">1</button>
+              <button onclick="handleNumpadPress(2)">2</button>
+              <button onclick="handleNumpadPress(3)">3</button>
+              <button onclick="handleNumpadPress(4)">4</button>
+              <button onclick="handleNumpadPress(5)">5</button>
+              <button onclick="handleNumpadPress(6)">6</button>
+              <button onclick="handleNumpadPress(7)">7</button>
+              <button onclick="handleNumpadPress(8)">8</button>
+              <button onclick="handleNumpadPress(9)">9</button>
+              <button onclick="makeValueNegative()">+/-</button>
+              <button onclick="handleNumpadPress(0)">0</button>
+              <button onclick="handleNumpadPress('.')">.</button>
+            </div>
+            <div id="backgroundHighlight"></div>
+          </div>
         </section>
       </div>
-
+      
 
     </main>
     <script src="./js/index.js"></script>
